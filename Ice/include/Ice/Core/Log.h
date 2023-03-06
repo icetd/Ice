@@ -2,6 +2,7 @@
 #define LOG_H
 
 #include <spdlog/spdlog.h>
+#include <spdlog/fmt/ostr.h>
 #include <memory>
 
 #define ICE_CORE_TRACE(...) ::Ice::Log::GetCoreLogger()->trace(__VA_ARGS__)
@@ -10,10 +11,10 @@
 #define ICE_CORE_ERROR(...) ::Ice::Log::GetCoreLogger()->error(__VA_ARGS__)
 
 
-#define ICE_CLIENT_TRACE(...) ::Ice::Log::GetClientLogger()->trace(__VA_ARGS__)S
-#define ICE_CLIENT_INFO(...)  ::Ice::Log::GetClientLogger()->info(__VA_ARGS__)
-#define ICE_CLIENT_WARN(...)  ::Ice::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define ICE_CLIENT_ERROR(...) ::Ice::Log::GetClientLogger()->error(__VA_ARGS__)
+#define ICE_TRACE(...) ::Ice::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define ICE_INFO(...)  ::Ice::Log::GetClientLogger()->info(__VA_ARGS__)
+#define ICE_WARN(...)  ::Ice::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define ICE_ERROR(...) ::Ice::Log::GetClientLogger()->error(__VA_ARGS__)
 
 
 namespace Ice {
