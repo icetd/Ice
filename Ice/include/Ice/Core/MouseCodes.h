@@ -1,7 +1,6 @@
 #ifndef MOUSE_CODES_H
 #define MOUSE_CODES_H
 
-#include <stdint.h>
 
 namespace {
 	using MouseCode = uint16_t;

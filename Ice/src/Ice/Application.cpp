@@ -1,5 +1,6 @@
 #include "Ice/Core/Application.h"
 #include <Ice/Events/ApplicationEvent.h>
+#include <Ice/Events/KeyEvent.h>
 #include "Ice/Core/Log.h"
 
 namespace Ice {

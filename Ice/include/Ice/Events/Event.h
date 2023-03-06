@@ -3,7 +3,6 @@
 
 #include <Ice/Core/Base.h>
 #include <Ice/Debug/Instrumentor.h>
-#include <functional>
 
 namespace Ice {
 	enum class EventType

@@ -1,7 +1,6 @@
 #ifndef KEY_CODES_H
 #define KEY_CODES_H
 
-#include <stdint.h>
 
 namespace Ice {
 	using KeyCode = uint16_t;

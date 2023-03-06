@@ -3,7 +3,6 @@
 
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ostr.h>
-#include <memory>
 
 #define ICE_CORE_TRACE(...) ::Ice::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define ICE_CORE_INFO(...)  ::Ice::Log::GetCoreLogger()->info(__VA_ARGS__)
