@@ -3,6 +3,8 @@
 
 #ifdef ICE_PLATFORM_WINDOWS
 	#include "Platform/Windows/WindowsWindow.h"
+#else 
+	#include "Platform/Windows/WindowsWindow.h"
 #endif
 
 namespace Ice {
