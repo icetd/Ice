@@ -65,7 +65,7 @@ if (WIN32)
  	)
 elseif (UNIX)
 	list (APPEND EXTRA_LIBS
-		"-lGL -lGLU -lX11"
+		"-lGL -lGLU -lX11 glfw"
 	)
 endif ()
 
