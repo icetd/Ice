@@ -1,3 +1,6 @@
 [submodule "Ice/vendor/spdlog"]
 	path = Ice/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Ice/vendor/glfw"]
+	path = Ice/vendor/glfw
+	url = https://github.com/glfw/glfw.git

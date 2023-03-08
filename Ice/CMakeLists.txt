@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(Ice)
 
 add_subdirectory(vendor/spdlog)
+add_subdirectory(vendor/glfw)
 
 set (CMKAE_CXX_STANDARD 14)
 set (CMAKE_BUILD_TYPE Debug)
@@ -10,7 +11,9 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set (SOURCE_DIR  "${CMAKE_CURRENT_LIST_DIR}/src") 
 set (INCLUDE_DIR "${CMAKE_CURRENT_LIST_DIR}/include")
+
 set (SPDLOG_INC  "${CMAKE_CURRENT_LIST_DIR}/vendor/spdlog/include")
+set (GLFW_INC	 "${CMAKE_CURRENT_LIST_DIR}/vendor/glfw/include")
 
 message("${SOURCE_DIR}")
 message("${INCLUDE_DIR}")
@@ -19,14 +22,23 @@ message("${SPDLOG_INC}")
 include_directories(
 	${INCLUDE_DIR}
 	${INCLUDE_DIR}/Ice
+	${INCLUDE_DIR}/Core
+	${INCLUDE_DIR}/Renderer
+	${INCLUDE_DIR}/Platform/OpenGL
+	${INCLUDE_DIR}/Platform/Windows
+
 	${SPDLOG_INC}
+	${GLFW_INC}
 ) 
 
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 file(GLOB_RECURSE SRC_FILES
-    "${SOURCE_DIR}/Ice/*.cpp"
+    "${SOURCE_DIR}/Ice/Core/*.cpp"
+    "${SOURCE_DIR}/Ice/Renderer/*.cpp"
+    "${SOURCE_DIR}/Platform/OpenGL/*.cpp"
+    "${SOURCE_DIR}/Platform/Windows/*.cpp"
 )
 
 file (GLOB_RECURSE INC_FILES
@@ -45,10 +57,11 @@ endif ()
 
 if (WIN32)
 	list(APPEND EXTRA_LIBS
-
-	)
+		opengl32 glfw
+ 	)
 elseif (UNIX)
 	list (APPEND EXTRA_LIBS
+		"-lGL -lGLU -lX11"
 	)
 endif ()
 
