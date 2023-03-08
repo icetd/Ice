@@ -5,7 +5,4 @@
 #include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Ice {
-	//Scope<GraphicsContext> GraphicsContext::Create(void *window)
-	//{
-	//}
 }

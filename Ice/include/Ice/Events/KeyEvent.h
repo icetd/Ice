@@ -1,13 +1,15 @@
 #ifndef KEY_EVENT_H
 #define KEY_EVENT_H
 
-#include <Ice/Events/Event.h>
-#include <Ice/Core/KeyCodes.h>
+#include "Ice/Events/Event.h"
+#include "Ice/Core/KeyCodes.h"
 
 namespace Ice {
 	class KeyEvent : public Event {
 	public:
 		KeyCode GetKeyCode() const { return m_KeyCode; }
+		EVENT_CLASS_CATEGORY (EventCategoryKeyboard | EventCategoryInput)
+
 	protected:
 		KeyEvent(const KeyCode keycode)
 			: m_KeyCode(keycode)

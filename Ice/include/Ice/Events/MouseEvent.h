@@ -5,9 +5,9 @@
 #include <Ice/Core/MouseCodes.h>
 
 namespace Ice {
-	class MouseMoveEvent : public Event {
+	class MouseMovedEvent : public Event {
 	public:
-		MouseMoveEvent(const float x, const float y)
+		MouseMovedEvent(const float x, const float y)
 			: m_MouseX(x), m_MouseY(y) {}
 		float GetX() const { return m_MouseX; }
 		float GetY() const { return m_MouseY; }

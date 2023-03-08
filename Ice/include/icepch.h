@@ -13,4 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Ice/Core/Base.h"
+#include "Ice/Core/Log.h"
+
 #endif

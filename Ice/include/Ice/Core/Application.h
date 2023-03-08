@@ -1,6 +1,9 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
+#include "icepch.h"
+#include "Window.h"
+
 namespace Ice {
 
 	class Application {
@@ -9,6 +12,9 @@ namespace Ice {
 		virtual ~Application();
 
 		void run();
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 	// To be define in CLIENT

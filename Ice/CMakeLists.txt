@@ -3,6 +3,7 @@ project(Ice)
 
 add_subdirectory(vendor/spdlog)
 add_subdirectory(vendor/glfw)
+add_definitions( -DICE_ENABLE_ASSERTS -DICE_DEBUG -DICE_PLATFORM_WINDOWS)
 
 set (CMKAE_CXX_STANDARD 14)
 set (CMAKE_BUILD_TYPE Debug)
